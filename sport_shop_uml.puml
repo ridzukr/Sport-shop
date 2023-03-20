@@ -1,0 +1,51 @@
+@startuml
+class app.BuilderSportShop {
++ {static} void main(String[])
+}
+class app.builders.CapWhite {
++ float price()
++ String name()
++ String maker()
++ String color()
+}
+class app.shop.Shop {
+~ List<Product> items
++ void addProduct(Product)
++ float getCost()
++ void showProduct()
+}
+class app.builders.T_ShirtRed {
++ float price()
++ String name()
++ String maker()
++ String color()
+}
+interface app.builders.Product {
+~ String name()
+~ String color()
+~ String maker()
+~ float price()
+}
+class app.builders.T_ShirtBlue {
++ float price()
++ String maker()
++ String name()
++ String color()
+}
+class app.director.Director {
++ Shop orderA()
++ Shop orderB()
+}
+class app.builders.CapBlack {
++ float price()
++ String name()
++ String maker()
++ String color()
+}
+
+
+app.builders.Product <|.. app.builders.CapWhite
+app.builders.Product <|.. app.builders.T_ShirtRed
+app.builders.Product <|.. app.builders.T_ShirtBlue
+app.builders.Product <|.. app.builders.CapBlack
+@enduml
